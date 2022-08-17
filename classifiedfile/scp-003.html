@@ -11,7 +11,7 @@
   <body class="subpage_body">
     <nav>
       <div class="subpage_logo">
-        <a href="../Index.html">SCP CLASSIFIED FILE</a>
+        <a href="../index.html">SCP CLASSIFIED FILE</a>
       </div>
       <a href="#" class="toggle-button">
         <span class="bar"></span>
@@ -248,6 +248,32 @@
       locked.addEventListener("click", function () {
         alert("🈲FILE ACCESS CLOSED PERMERNANTLY.");
       });
+
+      window.addEventListener("scroll", reveal);
+
+      function reveal() {
+        var reveals = document.querySelectorAll(".reveal");
+
+        for (var i = 0; i < reveal.length; i++) {
+          var windowheight = window.innerheight;
+          var revealtop = reveal[i].getBoundingClientRect().top;
+          var revealpoint = 150;
+          if (revealtop < windowheight - revealpoint) {
+            reveals[i].classlist.add("active");
+          } else {
+            reveal[i].classlist.remove("active");
+          }
+        }
+      }
+
+      const toggleButton=document.querySelector(".toggle-button")
+      const navbar=document.querySelector("ul")
+
+      toggleButton.addEventListener("click",function()
+      {
+        navbar.classList.toggle("live")
+        console.log("testing")
+      })
     </script>
   </body>
 </html>
