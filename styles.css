@@ -738,9 +738,7 @@ nav li{
 nav li a{
   font-size:0.5em ;
 }
-nav li .active{
-  font-size: 1em;
-}
+
 .subpage_header{
   font-size: 0.8rem;
   padding-bottom: 50px;
@@ -837,13 +835,9 @@ margin: 0;
     flex-direction: column;
     opacity: 100%;
   }
-  ul{
-    /* display: none; */
-    display: flex;
-    flex-direction: row;
-    margin-left: 0;
+  nav li .active{
+    font-size: 0.7em;
   }
-
   .subpage_header{
     margin: 50px 0;
   }
@@ -857,6 +851,7 @@ margin: 0;
     display: none;
     width: 100%;
     padding-top: 3rem;
+    transition: transform 500ms;
   }
   nav{
     flex-direction: column;
