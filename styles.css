@@ -460,6 +460,7 @@ ul {
   display: flex;
   justify-content: center;
   align-items: center;
+  transition: all 300ms;
 }
 li {
   list-style: none;
@@ -494,13 +495,46 @@ nav .active {
   padding: 0;
   position: absolute;
   right: 1rem;
+  margin-top: 10px;
 }
 .toggle-button .bar{
-  height: 3px;
+  height: 4px;
   background-color: #03080e;
   width: 100%;
   border-radius: 10px;
+  transform: skew(5deg);
+	transition: all .275s;
+  margin: 0 auto;
 }
+.toggle-button .bar:after,
+.toggle-button .bar:before{
+  content: " ";
+  display: block;
+  height: 100%;
+  background: #03080e;
+  transition: all .275s;
+}
+.toggle-button .bar:after{
+  transform: translateY(-12px)  skew(-20deg);
+}
+.toggle-button .bar:before{
+  transform: translateY(-16px) skew(-20deg);
+}
+/* Toggle State part */
+.toggle-button .bar.is-open  {
+	transform: skew(5deg) translateY(-8px) rotate(-45deg);
+}
+
+.toggle-button .is-open:before {
+	transform: translateY(0px) skew(-10deg) rotate(75deg);
+}
+
+.toggle-button .is-open:after {
+	transform: translateY(-12px) translateX(10px) skew(-20deg);
+    opacity: 0;
+}
+
+
 
 @keyframes glitch {
   2%,
@@ -851,7 +885,7 @@ margin: 0;
     display: none;
     width: 100%;
     padding-top: 3rem;
-    transition: transform 500ms;
+    transition: all 500ms;
   }
   nav{
     flex-direction: column;
