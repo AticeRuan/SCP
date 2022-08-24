@@ -15,8 +15,6 @@
       </div>
       <a href="#" class="toggle-button">
         <span class="bar"></span>
-        <span class="bar"></span>
-        <span class="bar"></span>
       </a>
       <ul>
         <li><a href="#" id="locked">SCP-001</a></li>
@@ -239,29 +237,15 @@
         alert("🈲FILE ACCESS CLOSED PERMERNANTLY.");
       });
 
-      window.addEventListener("scroll", reveal);
-
-      function reveal() {
-        var reveals = document.querySelectorAll(".reveal");
-
-        for (var i = 0; i < reveal.length; i++) {
-          var windowheight = window.innerheight;
-          var revealtop = reveal[i].getBoundingClientRect().top;
-          var revealpoint = 150;
-          if (revealtop < windowheight - revealpoint) {
-            reveals[i].classlist.add("active");
-          } else {
-            reveal[i].classlist.remove("active");
-          }
-        }
-      }
 
       const toggleButton=document.querySelector(".toggle-button")
       const navbar=document.querySelector("ul")
+      const bar=document.querySelector(".bar")
 
       toggleButton.addEventListener("click",function()
       {
         navbar.classList.toggle("live")
+        bar.classList.toggle("is-open")
         console.log("testing")
       })
     </script>
