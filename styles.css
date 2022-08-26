@@ -219,9 +219,13 @@ section img {
   background-color: #f6f4ee;
 }
 
+.typewriter{
+  max-width: fit-content;
+}
+
 .typewriter h2 {
-  border-right: 0.15em solid red;
-  animation: typing 10s steps(35, end), blink-caret 0.75s step-end infinite;
+  border-right: 0.15em solid darkred;
+  animation: typing 10s steps(22, end), blink-caret 0.75s step-end infinite;
   white-space: nowrap;
   overflow: hidden;
   display: block;
@@ -246,7 +250,7 @@ section img {
     border-color: transparent;
   }
   50% {
-    border-color: red;
+    border-color: darkred;
   }
 }
 
